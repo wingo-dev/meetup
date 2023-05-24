@@ -83,6 +83,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
+  height: 100vh;
 }
 
 body {
@@ -94,12 +95,33 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
-
+header{
+      display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 21px 0;
+    background: purple;
+    color: white;
+}
+footer{
+    background: purple;
+    padding: 10px 0;
+    color: white;
+    text-align: center;
+}
 a {
   color: inherit;
   text-decoration: none;
+  padding: 20px;
 }
-
+a:hover{
+  color: yellow;
+}
+.container{
+  height: 100vh;
+  width: 1280px;
+  margin: auto;
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

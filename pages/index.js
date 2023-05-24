@@ -1,10 +1,8 @@
-import RootLayout from "@/app/layout";
-
 const HomePage = () => {
   return (
-    <RootLayout>
+    <div className="container">
       <h2>meetup website</h2>
-    </RootLayout>
+    </div>
   );
 };
 
