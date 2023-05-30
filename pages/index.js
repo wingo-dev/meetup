@@ -1,27 +1,27 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import the carousel styles
 import { Carousel } from "react-responsive-carousel";
 import Image from "next/image";
-import MeetUpList from "@/app/components/MeetUpList";
+import MeetUp from "@/app/components/meetup";
+const cardData = [
+  {
+    title: "Meeting 1",
+    content: "This is the content of Card 1.",
+    imageUrl: "/img/bg1.jpg",
+  },
+  {
+    title: "Meeting 2",
+    content: "This is the content of Card 2.",
+    imageUrl: "/img/bg2.jpg",
+  },
+  {
+    title: "Meeting 3",
+    content: "This is the content of Card 3.",
+    imageUrl: "/img/bg3.jpg",
+  },
+];
 
-const HomePage = () => {
-  const cardData = [
-    {
-      title: "Card 1",
-      content: "This is the content of Card 1.",
-      imageUrl: "/img/bg1.jpg",
-    },
-    {
-      title: "Card 2",
-      content: "This is the content of Card 2.",
-      imageUrl: "/img/bg2.jpg",
-    },
-    {
-      title: "Card 3",
-      content: "This is the content of Card 3.",
-      imageUrl: "/img/bg3.jpg",
-    },
-  ];
-
+const HomePage = (props) => {
+  console.log(props.meetups);
   return (
     <div className="container">
       <Carousel
@@ -46,14 +46,23 @@ const HomePage = () => {
           <Image src="/img/bg5.jpg" alt="Image 5" width={600} height={600} />
         </div>
       </Carousel>
-      <section>
-        <MeetUpList meetups={props.meetups} />
-      </section>
+      <div>
+        <div className="card-container">
+          {props.meetups.map((meetup, index) => (
+            <MeetUp
+              imageUrl={meetup.imageUrl}
+              title={meetup.title}
+              content={meetup.content}
+              key={index}
+            />
+          ))}
+        </div>
+      </div>
     </div>
   );
 };
 
-export async function getStaticPage() {
+export async function getStaticProps() {
   return {
     props: {
       meetups: cardData,
