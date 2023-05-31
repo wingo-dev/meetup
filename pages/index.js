@@ -18,10 +18,25 @@ const cardData = [
     content: "This is the content of Card 3.",
     imageUrl: "/img/bg3.jpg",
   },
+  {
+    title: "Meeting 4",
+    content: "This is the content of Card 3.",
+    imageUrl: "/img/bg4.jpg",
+  },
+  {
+    title: "Meeting 5",
+    content: "This is the content of Card 3.",
+    imageUrl: "/img/bg5.jpg",
+  },
+  {
+    title: "Meeting 3",
+    content: "This is the content of Card 3.",
+    imageUrl: "/img/bg3.jpg",
+  },
 ];
 
 const HomePage = (props) => {
-  console.log(props.meetups);
+  // console.log(props.meetups);
   return (
     <div className="container">
       <Carousel
